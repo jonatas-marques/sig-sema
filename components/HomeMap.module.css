@@ -1,0 +1,17 @@
+#header {
+    text-align: center;
+    height: 75px;
+    background-color: darkcyan
+}
+#mapdiv {
+    height: 850px;
+    background-color: salmon;
+}
+#side_panel {
+    height: 850px;
+    background-color: beige;
+}
+#footer {
+    height: 75px;
+    background-color: darkgray;
+}
