@@ -1,17 +1,18 @@
-#header {
+.header {
+    text-decoration-color: white;
     text-align: center;
     height: 75px;
     background-color: darkcyan
 }
-#mapdiv {
+.mapdiv {
     height: 850px;
     background-color: salmon;
 }
-#side_panel {
+.side_panel {
     height: 850px;
     background-color: beige;
 }
-#footer {
+.footer {
     height: 75px;
     background-color: darkgray;
 }
