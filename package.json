@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^3.4.1",
-    "next": "^13.2.1",
+    "next": "^13.2.3",
     "ol": "^7.2.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",

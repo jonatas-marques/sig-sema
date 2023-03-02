@@ -1,33 +1,44 @@
-import * as React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import styles from '../styles.module.css'
+import React from 'react';
+//import ReactDOM from 'react-dom';
+import { Map, View } from 'ol';
+import TileLayer from 'ol/layer/Tile';
+import OSM from 'ol/source/OSM';
+import 'ol/ol.css';
 
-//const mapElement = useRef()
+const barueriLatLng = [-23.504003341782116, -46.87443782973699]; //Coordenadas de Barueri
 
-function Home() {
-    return (
+export default class App extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+          center: barueriLatLng,
+          zoom: 9,
+      };
+    }
+
+    componentDidMount() {
+        new Map({
+          target: "map-container",
+            layers: [
+                new TileLayer({
+                    source: new OSM(),
+                }),
+            ],
+            view: new View({
+                center: barueriLatLng,
+                zoom: 9
+                ,
+            }),
+        });
+    }
+
+    render() {
+        return (
         <div>
-            <div
-                className={styles.header}
-                class="col-md-12 text-center">
-                <h1>Prefeitura Municipal de Barueri</h1>
-            </div>
-            <div 
-                className={styles.side_panel}
-                class="col-md-3">
-                <h2 class="text-center">Prédios Públicos</h2>
-                <button id="zoomToSEMA" class="form-control btn-primary">Secretaria de Recursos Naturais e Meio Ambiente</button>
-            </div>
-            <div 
-                //ref={mapElement}
-                className={styles.mapdiv} class="col-md-9">
-            </div>
-            <div className={styles.footer} class="col-md-12">
-                <h4 id="map_coords" class="text-center">Latitude: -23.5 Longitude: -46.8 Zoom Level: 13</h4>
-                <h4 class="text-center"> &copy;2023 <a href="https://portal.barueri.sp.gov.br/">Prefeitura de Barueri</a> </h4>
-            </div>
+          <h1>Sig Web</h1>
+        
+        <div style={{height:'100vh',width:'100%'}} id="map-container" className="map-container" />
         </div>
-    )                
-}
-
-export default Home
+        );
+    }
+};
