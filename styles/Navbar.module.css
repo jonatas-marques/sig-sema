@@ -1,0 +1,26 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 1.2em;
+    margin-bottom: 2em;
+    background-color: #d9d9d9;
+    color: #000;
+}
+
+.navbar a {
+    color: #fff;
+    margin-right: 1em;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #999;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

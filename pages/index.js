@@ -4,15 +4,22 @@ import { Map, View } from 'ol';
 import TileLayer from 'ol/layer/Tile';
 import OSM from 'ol/source/OSM';
 import 'ol/ol.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import Footer from '../src/components/Footer';
+import Navbar from '../src/components/Navbar';
+import Header from '../src/components/Header';
+import MapComponent from '../src/components/MapComponent';
 
-const barueriLatLng = [-23.504003341782116, -46.87443782973699]; //Coordenadas de Barueri
+// Não está funcionando as coordenadas de -23.504003341782116, -46.87443782973699
+// Apenas as coordenadas 0, 0 funcionam
+const barueriLatLng = [-46.87443782973699, -23.504003341782116]; //Coordenadas de Barueri
 
 export default class App extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
           center: barueriLatLng,
-          zoom: 9,
+          zoom: 0,
       };
     }
 
@@ -26,7 +33,7 @@ export default class App extends React.Component {
             ],
             view: new View({
                 center: barueriLatLng,
-                zoom: 9
+                zoom: 7
                 ,
             }),
         });
@@ -34,11 +41,12 @@ export default class App extends React.Component {
 
     render() {
         return (
-        <div>
-          <h1>Sig Web</h1>
-        
-        <div style={{height:'100vh',width:'100%'}} id="map-container" className="map-container" />
-        </div>
+        <>
+            <Header/>
+            <Navbar/>
+            <MapComponent/>
+            <Footer/>
+        </>
         );
     }
-};
+}; 
