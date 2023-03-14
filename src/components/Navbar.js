@@ -13,6 +13,7 @@ export default function Navbar() {
                     height="50"
                     alt="Sig Web"
                 />
+                <h1>Sig Web</h1>
             </div>
             <ul className={styles.link_items}>
                 <li>

@@ -5,11 +5,11 @@
     padding: 1em 1.2em;
     margin-bottom: 2em;
     background-color: #d9d9d9;
-    color: #000;
+    color: #348aa7;
 }
 
 .navbar a {
-    color: #fff;
+    color: #348aa7;
     margin-right: 1em;
     text-decoration: none;
     transition: 0.3s;
@@ -41,7 +41,7 @@
 }
 
 .link_items a {
-    color: #fff;
+    color: #348aa7;
     text-decoration: none;
     padding: 5px;
     transition: .4s;
