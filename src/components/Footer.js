@@ -4,7 +4,7 @@ export default function Footer () {
     return (
         <footer className={styles.footer}>
             <p>
-                @2023 Prefeitura
+                <span>@2023 Prefeitura</span>
             </p>
         </footer>
     )

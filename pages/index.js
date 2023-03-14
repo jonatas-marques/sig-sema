@@ -7,7 +7,6 @@ import 'ol/ol.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Footer from '../src/components/Footer';
 import Navbar from '../src/components/Navbar';
-import Header from '../src/components/Header';
 import MapComponent from '../src/components/MapComponent';
 
 // Não está funcionando as coordenadas de -23.504003341782116, -46.87443782973699
@@ -42,7 +41,6 @@ export default class App extends React.Component {
     render() {
         return (
         <>
-            <Header/>
             <Navbar/>
             <MapComponent/>
             <Footer/>
