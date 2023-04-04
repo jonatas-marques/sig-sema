@@ -1,15 +1,21 @@
 import React from 'react';
 
-import Footer from '../src/components/Footer';
-import Navbar from '../src/components/Navbar';
+import ResponsiveAppBar from '../src/components/ResponsiveAppBar';
 import MapComponent from '../src/components/MapComponent';
+import BottomNav from '../src/components/MuiBottomNavigation';
 
 export default function Home(){
     return (
-        <>
-            <Navbar/>
-            <MapComponent/>
-            <Footer/>
+        <>  
+            <div>
+                <ResponsiveAppBar />
+            </div>
+            <div>
+                <MapComponent/>
+            </div>
+            <div>
+                <BottomNav/>
+            </div>
         </>
     )
 }

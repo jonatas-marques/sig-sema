@@ -3,7 +3,8 @@ import View from "ol/View";
 import TileLayer from "ol/layer/Tile";
 import XYZ from "ol/source/XYZ";
 import { useEffect } from "react";
-
+import {defaults} from 'ol/control/defaults';
+import Container from '@mui/material/Container';
 import styles from '/styles/Map.module.css'
 
 const placeBarueri = [-46.88576749900006, -23.509130797617008];
@@ -30,10 +31,8 @@ export default function MapComponent() {
   }, []);
 
   return (
-    <>
-      <div>
-        <div id="map" className={styles.mapdiv}></div>
-      </div>
-    </>
+    <Container maxWidth="false">
+      <div id="map" className={styles.mapdiv}></div>
+    </Container>
   );
 }
