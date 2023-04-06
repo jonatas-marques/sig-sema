@@ -45,7 +45,9 @@ export default function FlexDirection() {
     <div style={{ width: '150px' }}>
       <Box
         sx={{
-            position: 'relative',
+            position: 'absolute',
+            top: '70px',
+            right: '12px',
           display: 'flex',
           alignItems: 'flex-start',
           flexDirection: 'column',

@@ -14,7 +14,29 @@ import Typography from '@mui/material/Typography';
 import { blue } from '@mui/material/colors';
 import { Layers } from '@mui/icons-material';
 
-const layers = ['OpenStreetMap', 'Google Maps', 'Ciclo 1', 'Ciclo 2'];
+/* XYZ URL options
+Google Earth Base Map : https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}
+
+Bing Virtual Earth : http://ecn.t3.tiles.virtualearth.net/tiles/a{q}.jpeg?g=1
+
+Esri Base Map : https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}
+
+Google Satellite Street Map Hybrid : https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}
+
+Open Topological Map : https://tile.opentopomap.org/{z}/{x}/{y}.png
+
+Open Street Map : http://tile.openstreetmap.org/{z}/{x}/{y}.png
+
+Google Street Map : https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}
+
+Google Terrain Map : http://mt0.google.com/vt/lyrs=t&hl=en&x={x}&y={y}&z={z}
+
+Google Terrain Street Hybrid : http://mt0.google.com/vt/lyrs=p&hl=en&x={x}&y={y}&z={z}
+
+Google Alternative Street Map : http://mt0.google.com/vt/lyrs=r&hl=en&x={x}&y={y}&z={z}
+*/
+
+const layers = ['Open Street Map', 'Google Street Map', 'Google Terrain Map', 'Esri Base Map'];
 
 function SimpleDialog(props) {
   const { onClose, selectedValue, open } = props;
@@ -69,10 +91,6 @@ export default function SimpleDialogDemo() {
 
   return (
     <div>
-      <Typography variant="subtitle1" component="div">
-        {selectedValue}
-      </Typography>
-      <br />
       <IconButton variant="outlined" onClick={handleClickOpen}>
         <Layers/>
       </IconButton>
