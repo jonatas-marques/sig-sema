@@ -14,7 +14,7 @@ export default function LabelBottomNavigation() {
   };
 
   return (
-    <BottomNavigation sx={{ width: '100vw' , position: 'absolute', bottom: 0}} value={value} onChange={handleChange}>
+    <BottomNavigation sx={{ width: '100vw' , position: 'fixed', bottom: 0}} value={value} onChange={handleChange}>
       <BottomNavigationAction
         label="Recentes"
         value="recentes"

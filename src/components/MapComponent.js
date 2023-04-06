@@ -13,6 +13,7 @@ export default function MapComponent() {
   useEffect(() => {
     new Map({
       target: "map",
+      controls: [],
       layers: [
         new TileLayer({
           source: new XYZ({
