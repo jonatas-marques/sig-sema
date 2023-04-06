@@ -17,7 +17,7 @@ export default function MapComponent() {
       layers: [
         new TileLayer({
           source: new XYZ({
-            url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+            url: "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}",
             crossOrigin: "anonymous",
           }),
         }),
