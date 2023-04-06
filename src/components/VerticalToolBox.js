@@ -1,9 +1,9 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
-import LayersDialog from '/src/components/LayersDialog.js';
+import LayersSwitchButton from '/src/components/LayersSwitchButton.js';
 import { IconButton } from '@mui/material';
-import LocationSearchingIcon from '@mui/icons-material/LocationSearching';
+import LocationSearchingButton from '/src/components/LocationSearchingButton.js';
 
 function Item(props) {
   const { sx, ...other } = props;
@@ -55,10 +55,8 @@ export default function FlexDirection() {
           borderRadius: 1,
         }}
       >
-        <LayersDialog/>
-        <IconButton>
-            <LocationSearchingIcon/>
-        </IconButton>
+        <LayersSwitchButton/>
+        <LocationSearchingButton/>
       </Box>
     </div>
   );

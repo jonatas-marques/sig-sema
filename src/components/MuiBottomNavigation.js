@@ -5,6 +5,7 @@ import FolderIcon from '@mui/icons-material/Folder';
 import RestoreIcon from '@mui/icons-material/Restore';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 
 export default function LabelBottomNavigation() {
   const [value, setValue] = React.useState('recents');
@@ -31,9 +32,9 @@ export default function LabelBottomNavigation() {
         icon={<LocationOnIcon />}
       />
       <BottomNavigationAction 
-        label="Pasta" 
-        value="pasta" 
-        icon={<FolderIcon />} 
+        label="Notificações" 
+        value="notifications" 
+        icon={<NotificationsNoneIcon />} 
       />
     </BottomNavigation>
   );
