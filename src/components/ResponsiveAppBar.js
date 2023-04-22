@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import ShareLocationIcon from '@mui/icons-material/ShareLocation';
 
 const pages = ['Planejamento', 'Fiscalização', 'Biodiversidade'];
-const settings = ['Perfil', 'Conta', 'Painel', 'Sair'];
+const settings = ['Perfil', 'Configurações', 'Sair'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
