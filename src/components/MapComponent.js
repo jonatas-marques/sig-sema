@@ -1,14 +1,12 @@
+//MapComponent.js
 import React, { useState, useRef, useEffect } from "react";
 import Map from "ol/Map";
 import View from "ol/View";
 import TileLayer from "ol/layer/Tile";
 import XYZ from "ol/source/XYZ";
 import styles from "/styles/Map.module.css";
-import { Box } from "@mui/material";
-import LayersSpeedDial from "/src/components/LayersSpeedDial.js";
-import LayersSwitchButton from "/src/components/LayersSwitchButton.js";
+import LayersSpeedDial from "/src/components/LayerSwitcher.js";
 import LocationSearchingButton from "/src/components/LocationSearchingButton.js";
-import DataManagement from "/src/components/DataManagement.js";
 
 export default function MapComponent() {
   //define parâmetros iniciais para o mapa
@@ -25,28 +23,54 @@ export default function MapComponent() {
       zoom: zoom,
     })
   );
+  const [source, setSource] = useState(
+    new XYZ({
+      url: "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}",
+      crossOrigin: "anonymous",
+    })
+  );
+  const [tileLayer, setTileLayer] = useState(
+    new TileLayer({
+      source: source,
+    })
+  );
 
-  //pega a referência para o mapa, mas por quê?
+  //Define uma referência para o mapa
   const mapRef = useRef();
 
+  //Renderiza o mapa
   useEffect(() => {
     const initialMap = new Map({
-      target: mapRef.current, //por que utilizar useRef aqui?
+      target: mapRef.current,
       controls: [],
-      layers: [
-        new TileLayer({
-          source: new XYZ({
-            url: "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}",
-            crossOrigin: "anonymous",
-          }),
-        }),
-      ],
+      layers: [tileLayer],
       view: view,
     });
 
-    //ainda não entendi essa linha do código
     setMap(initialMap);
-  }, []);
+    console.log("Renderizou");
+    
+  }, [tileLayer]);
+
+  // função para atualizar o estado do TileLayer com a nova URL
+  const handleURLChange = (url) => {
+    console.log("URL chegou: " + url);
+    setSource(
+      new XYZ({
+        url: url,
+        crossOrigin: "anonymous",
+      })
+    );
+    console.log("Source: " + source);
+  };
+  useEffect(() => {
+    setTileLayer(
+      new TileLayer({
+        source: source,
+      })
+    );
+    console.log("TileLayer: " + tileLayer);
+  }, [source]);
 
   //função para pegar a posição do usuário
   const handleLocationButtonClick = () => {
@@ -69,14 +93,10 @@ export default function MapComponent() {
     <>
       <div ref={mapRef} className={styles.mapdiv}></div>
       <div>
-            <LayersSpeedDial />
-          </div>
+        <LayersSpeedDial event={handleURLChange} />
+      </div>
       <div>
-        <Box className={styles.toolbox}>
-          <div>
-            <LocationSearchingButton event={handleLocationButtonClick} />
-          </div>
-        </Box>
+        <LocationSearchingButton event={handleLocationButtonClick} />
       </div>
     </>
   );

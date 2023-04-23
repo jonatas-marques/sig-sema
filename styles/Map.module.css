@@ -11,14 +11,20 @@
 
 .toolbox {
     position: absolute;
-        bottom: 75px;
-        right: 12px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        padding: 1;
-        margin: 1;
-        background-color: whitesmoke;
-        border-radius: 9.1%;
-        width: 39px;
+    bottom: 75px;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1;
+    margin: 1;
+    background-color: whitesmoke;
+    border-radius: 16%;
+    width: 39px;
+}
+
+.layersdial {
+    position: absolute;
+    bottom: 75px;
+    left: 16px;
 }
