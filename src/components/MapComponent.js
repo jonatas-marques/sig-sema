@@ -5,9 +5,10 @@ import TileLayer from "ol/layer/Tile";
 import XYZ from "ol/source/XYZ";
 import styles from "/styles/Map.module.css";
 import { Box } from "@mui/material";
-
+import LayersSpeedDial from "/src/components/LayersSpeedDial.js";
 import LayersSwitchButton from "/src/components/LayersSwitchButton.js";
 import LocationSearchingButton from "/src/components/LocationSearchingButton.js";
+import DataManagement from "/src/components/DataManagement.js";
 
 export default function MapComponent() {
   //define parâmetros iniciais para o mapa
@@ -55,7 +56,7 @@ export default function MapComponent() {
         const lon = position.coords.longitude;
         view.animate({
           center: [lon, lat],
-          zoom: 21,
+          zoom: 20,
           duration: 1568,
         });
       });
@@ -68,9 +69,13 @@ export default function MapComponent() {
     <>
       <div ref={mapRef} className={styles.mapdiv}></div>
       <div>
+            <LayersSpeedDial />
+          </div>
+      <div>
         <Box className={styles.toolbox}>
-          <LayersSwitchButton />
-          <LocationSearchingButton event={handleLocationButtonClick} />
+          <div>
+            <LocationSearchingButton event={handleLocationButtonClick} />
+          </div>
         </Box>
       </div>
     </>
