@@ -7,6 +7,8 @@ import XYZ from "ol/source/XYZ";
 import styles from "/styles/Map.module.css";
 import LayersSpeedDial from "/src/components/LayerSwitcher.js";
 import LocationSearchingButton from "/src/components/LocationSearchingButton.js";
+import ResetNorthButton from "/src/components/ResetNorthButton.js";
+import { Box } from "@mui/material";
 
 export default function MapComponent() {
   //define parâmetros iniciais para o mapa
@@ -49,8 +51,7 @@ export default function MapComponent() {
 
     setMap(initialMap);
     console.log("Renderizou");
-    
-  }, [tileLayer]);
+  }, []);
 
   // função para atualizar o estado do TileLayer com a nova URL
   const handleURLChange = (url) => {
@@ -89,6 +90,11 @@ export default function MapComponent() {
     }
   };
 
+  //função para resetar direção, orientar para o norte
+  const handleResetNorthButton = () => {
+    view.setRotation(0);
+  };
+
   return (
     <>
       <div ref={mapRef} className={styles.mapdiv}></div>
@@ -96,7 +102,14 @@ export default function MapComponent() {
         <LayersSpeedDial event={handleURLChange} />
       </div>
       <div>
-        <LocationSearchingButton event={handleLocationButtonClick} />
+        <Box className={styles.toolbox}>
+          <div>
+            <ResetNorthButton event={handleResetNorthButton} />
+          </div>
+          <div>
+            <LocationSearchingButton event={handleLocationButtonClick} />
+          </div>
+        </Box>
       </div>
     </>
   );
