@@ -11,7 +11,7 @@
 
 .toolbox {
     position: absolute;
-    bottom: 75px;
+    bottom: 18px;
     right: 12px;
     display: flex;
     align-items: center;
@@ -25,6 +25,6 @@
 
 .layersdial {
     position: absolute;
-    bottom: 75px;
+    bottom: 18px;
     left: 16px;
 }

@@ -1,5 +1,5 @@
 {
-  "name": "sig-web",
+  "name": "sig-sema",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,12 +15,9 @@
     "@fontsource/roboto": "^4.5.8",
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.13",
-    "bootstrap": "^3.4.1",
-    "next": "^13.3.1",
+    "next": "^13.4.2",
     "ol": "^7.2.2",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.7.2",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.11.1"
+    "react-dom": "^18.2.0"
   }
 }

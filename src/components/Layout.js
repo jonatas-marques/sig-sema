@@ -13,9 +13,6 @@ export default function Home() {
       <div>
         <MapComponent />
       </div>
-      <div>
-        <BottomNav />
-      </div>
     </>
   );
 }
