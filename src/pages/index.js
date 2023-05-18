@@ -1,6 +1,6 @@
 import React from "react";
-import Layout from "../components/Layout";
+import App from "../pages/App";
 
-export default function App() {
-  return <Layout />;
+export default function Home() {
+  return <App />;
 }
